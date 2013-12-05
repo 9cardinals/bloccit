@@ -1,0 +1,41 @@
+<h1>Edit Topic</h1>
+
+<div class="row">
+  <div class="span-6">
+    <p>Guidelines for editing a topic:</p>
+    <ul>
+      <li>Ask yourself the following questions:</li>
+      <li>Is this kind (of about cats?)</li>
+      <li>Is this necessary (and about cats?)</li>
+      <li>You don't need to ask if it's wanted.  Cats are always wanted.</li>
+    </ul>
+  </div>
+  <div class="span-6">
+    <%= form_for @topic, html: { class: 'form-horizontal' } do |f| %>
+      <div class="control-group">
+        <%= f.label :name, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :name %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :description, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_area :description, rows: 8 %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.label :public, class: 'checkbox' do %>
+            <%= f.check_box :public %> Public topic
+          <% end %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.submit "Save", class: 'btn' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
